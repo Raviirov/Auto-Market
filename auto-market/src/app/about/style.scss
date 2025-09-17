@@ -1,4 +1,27 @@
+@use "../assets/styles/mixins" as *;
+
 .about-page-container {
-  background-color: black;
-  color: red;
+  padding: 50px 100px;
+  @include flex($direction: column);
+
+  h1 {
+    text-align: center;
+  }
+
+  .about-page-text-subtitle {
+    text-align: center;
+    width: 60%;
+    margin: 20px auto;
+  }
+
+  .image-container {
+    width: 60%;
+    margin: 20px auto;
+  }
+
+  img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+  }
 }
