@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import { CiLocationOn } from "react-icons/ci";
 import { CiClock2 } from "react-icons/ci";
 import { IoLogoWhatsapp } from "react-icons/io";
@@ -11,29 +11,34 @@ import { IoIosArrowDown } from "react-icons/io";
 import { FaRegHeart } from "react-icons/fa";
 import { LiaChartBarSolid } from "react-icons/lia";
 import { GoSearch } from "react-icons/go";
+import { GoDotFill } from "react-icons/go";
 import Image from "next/image";
 import Logo from '../assets/images/logo.png';
+import Car1 from '../assets/images/car1.png';
+import Car2 from '../assets/images/car2.png';
+import Car3 from '../assets/images/car3.png';
+import Car4 from '../assets/images/car4.webp';
+import Car5 from '../assets/images/car5.png';
+import Car6 from '../assets/images/car6.webp';
 import { Saira } from "next/font/google";
 import "./style.scss";
 
 const Font = Saira();
 
+
 function Header() {
   const [openIndex, setOpenIndex] = useState(null);
-
-  const handleToggle = (index) => {
+  const toggleDropdown = (index) => {
     setOpenIndex(openIndex === index ? null : index);
   };
 
-  useEffect(() => {
-    const handleClickOutside = (e) => {
-      if (!e.target.closest(".menu")) {
-        setOpenIndex(null);
-      }
-    };
-    document.addEventListener("click", handleClickOutside);
-    return () => document.removeEventListener("click", handleClickOutside);
-  }, []);
+  const [currentIndex, setCurrentIndex] = useState(0);
+  const goToNextSlide = () => {
+    setCurrentIndex((prevIndex) => (prevIndex + 1) % 3);
+  };
+  const goToPrevSlide = () => {
+    setCurrentIndex((prevIndex) => (prevIndex - 1 + 3) % 3);
+  };
 
   return (
     <>
@@ -95,66 +100,137 @@ function Header() {
         </div>
       </div>
 
-      {/* Navigation menu with dropdowns */}
       <div className="suggestions">
         <ul className="menu">
           {[
             {
-              title: "КАТАЛОГ АВТО",
+              label: "КАТАЛОГ АВТО",
               items: ["Седаны", "Кроссоверы", "Электро"],
             },
             {
-              title: "АВТО С ПРОБЕГОМ",
+              label: "АВТО С ПРОБЕГОМ",
               items: ["2015–2020", "до 1 млн ₽", "ТОП-10"],
             },
             {
-              title: "КРЕДИТ И РАССРОЧКА",
+              label: "КРЕДИТ И РАССРОЧКА",
               items: ["Кредит", "Рассрочка"],
             },
             {
-              title: "СПЕЦПРЕДЛОЖЕНИЯ",
+              label: "СПЕЦПРЕДЛОЖЕНИЯ",
               items: ["Акции", "Скидки"],
             },
-          ].map((menu, index) => (
-            <li key={index}>
-              <button
-                className="menu-btn"
-                onClick={() => handleToggle(index)}
-                type="button"
-              >
-                {menu.title}{" "}
-                <span className={`arrow ${openIndex === index ? "open" : ""}`}>
-                  <IoIosArrowDown />
-                </span>
+          ].map((menu, i) => (
+            <li key={i}>
+              <button className="menu-btn" onClick={() => toggleDropdown(i)}>
+                {menu.label} <span className="arrow"><IoIosArrowDown /></span>
               </button>
-              <ul
-                className="dropdown"
-                style={{ display: openIndex === index ? "block" : "none" }}
-              >
-                {menu.items.map((item, subIndex) => (
-                  <li key={subIndex}>
-                    <a href="#">{item}</a>
-                  </li>
+              <ul className={`dropdown ${openIndex === i ? "show" : ""}`}>
+                {menu.items.map((item, idx) => (
+                  <li key={idx}><a href="#">{item}</a></li>
                 ))}
               </ul>
             </li>
           ))}
+
+          <li>
+            <button className="menu-btn">ТАКСИ В КРЕДИТ</button>
+          </li>
+
+          <li>
+            <div className="icons">
+              <div className="icon-wrapper">
+                <FaRegHeart size="22" />
+                <span className="badge">10</span>
+              </div>
+              <div className="icon-wrapper">
+                <LiaChartBarSolid size="26" />
+                <span className="badge">12</span>
+              </div>
+              <div className="icon-wrapper">
+                <GoSearch size="24" />
+              </div>
+            </div>
+          </li>
         </ul>
-        <a>ТАКСИ В КРЕДИТ</a>
-        <div className="icons">
-          <div className="icon-wrapper">
-            <FaRegHeart size='21'/>
-            <span className="badge">10</span>
+      </div>
+
+      {/* <div className="sales-card">
+        <div className="bg-photo"></div>
+        <IoIosArrowDown className="left-arrow" onClick={goToPrevSlide} />
+        <div className="slider-content-container">
+          <div className={`slider-content ${currentIndex === 0 ? "active" : ""}`}>
+            <p>Осталось всего 10 авто!</p>
+            <h1>Грандиозная распродажа тестового парка!</h1>
+            <span>Узнай свою цену!</span>
+            <Image id="car1" src={Car1} alt="Car1" />
+            <Image id="car2" src={Car2} alt="Car2" />
+            <Image id="car3" src={Car3} alt="Car3" />
           </div>
-          <div className="icon-wrapper">
-            <LiaChartBarSolid size='21'/>
-            <span className="badge">12</span>
+          <div className={`slider-content ${currentIndex === 1 ? "active" : ""}`}>
+            <p>Осталось всего 5 авто!</p>
+            <h1>Горячие скидки на все модели!</h1>
+            <span>Не упусти шанс!</span>
+            <Image id="car4" src={Car4} alt="Car4" />
+            <Image id="car5" src={Car5} alt="Car5" />
+            <Image id="car6" src={Car6} alt="Car6" />
           </div>
-          <div className="icon-wrapper">
-            <GoSearch size='21'/>
-            <span className="badge">1</span>
+          <div className={`slider-content ${currentIndex === 2 ? "active" : ""}`}>
+            <p>Остались последние авто!</p>
+            <h1>Горячие предложения!</h1>
+            <span>Спеши купить!</span>
+            <img src={Car3} alt="Car3" />
           </div>
         </div>
+        <div className="dots">
+          {[0, 1, 2].map((dotIndex) => (
+            <GoDotFill
+              key={dotIndex}
+              className={`dot ${currentIndex === dotIndex ? "active" : ""}`}
+            />
+          ))}
+        </div>
+        <IoIosArrowDown className="right-arrow" onClick={goToNextSlide} />
+      </div> */}
+
+
+
+      <div className="sales-card">
+        <div className="bg-photo"></div>
+        <IoIosArrowDown className="left-arrow" onClick={goToPrevSlide}/>
+        {currentIndex === 0 && (
+          <div className="slider-content">
+            <p>Осталось всего 10 авто!</p>
+            <h1>Грандиозная распродажа тестового парка!</h1>
+            <span>Узнай свою цену!</span>
+            <Image id="car1" src={Car1} alt="Car1" />
+            <Image id="car2" src={Car2} alt="Car2" />
+            <Image id="car3" src={Car3} alt="Car3" />
+          </div>
+        )}
+        {currentIndex === 1 && (
+          <div className="slider-content">
+            <p>Осталось всего 5 авто!</p>
+            <h1>Горячие скидки на все модели!</h1>
+            <span>Не упусти шанс!</span>
+            <Image id="car4" src={Car4} alt="Car4" />
+            <Image id="car5" src={Car5} alt="Car5" />
+            <Image id="car6" src={Car6} alt="Car6" />
+          </div>
+        )}
+        {currentIndex === 2 && (
+          <div className="slider-content">
+            <p>Остались последние авто!</p>
+            <h1>Горячие предложения!</h1>
+            <span>Спеши купить!</span>
+            <img src={Car3} alt="Car3" />
+          </div>
+        )}
+        <div className="dots">
+          {[0, 1, 2].map((dotIndex) => (
+            <GoDotFill key={dotIndex} className={`dot ${currentIndex === dotIndex ? "active" : ""}`} />
+          ))}
+        </div>
+        <IoIosArrowDown className="right-arrow" onClick={goToNextSlide} />
       </div>
     </>
   );

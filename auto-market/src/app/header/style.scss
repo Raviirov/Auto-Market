@@ -136,95 +136,6 @@
   }
 }
 
-.menu {
-  list-style: none;
-  display: flex;
-  gap: 40px;
-  padding: 0;
-  margin: 0;
-  font-family: Arial, sans-serif;
-  font-weight: bold;
-  font-size: 14px;
-}
-
-.menu li {
-  position: relative;
-}
-
-.menu-btn {
-  background: none;
-  border: none;
-  font: inherit;
-  color: #333;
-  cursor: pointer;
-  display: flex;
-  align-items: center;
-  gap: 5px;
-}
-
-.menu-btn:hover {
-  color: #CA0100;
-}
-
-.arrow {
-  font-size: 10px;
-}
-
-.dropdown {
-  display: none;
-  position: absolute;
-  top: 100%;
-  left: 0;
-  list-style: none;
-  padding: 10px 0;
-  margin: 0;
-  background: #fff;
-  border: 1px solid #ddd;
-  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
-  z-index: 10;
-}
-
-.dropdown li {
-  padding: 5px 15px;
-  white-space: nowrap;
-}
-
-.dropdown li a {
-  text-decoration: none;
-  color: #333;
-  font-weight: normal;
-}
-
-.dropdown li a:hover {
-  color: #CA0100;
-}
-
-.icons {
-  display: flex;
-  gap: 20px; // space between icons
-
-  .icon-wrapper {
-    position: relative;
-    font-size: 24px; // size of icons
-    color: #333;     // icon color
-
-    .badge {
-      position: absolute;
-      top: -6px;   // adjust vertically
-      right: -8px; // adjust horizontally
-      background: #ca0100;
-      color: #fff;
-      font-size: 10px;
-      font-weight: bold;
-      padding: 2px 5px;
-      border-radius: 50%;
-      line-height: 1;
-      min-width: 16px;
-      text-align: center;
-    }
-  }
-}
-
 .suggestions {
   display: flex;
   justify-content: space-between;
@@ -232,4 +143,228 @@
   width: 80%;
   margin-left: auto;
   margin-right: auto;
+  .menu {
+    li {
+      position: relative;
+    }
+    list-style: none;
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    gap: 96px;
+    margin: 10 0;
+    font-weight: bold;
+  }
+  .menu-btn {
+    width: 100%;
+    background: none;
+    border: none;
+    font: inherit;
+    color: #262626;
+    cursor: pointer;
+    display: inline-block;
+    align-items: center;
+    gap: 5px;
+    &:hover {
+      color: #CA0100;
+    }
+  }
+  .dropdown {
+    display: none;
+    position: absolute;
+    top: 100%;
+    min-width: 100%;
+    background: white;
+    padding: 5px;
+    list-style: none;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+    &.show { display: block; z-index: 1;}
+    li {
+      padding: 5px 10px;
+      white-space: nowrap;
+      a {
+        text-decoration: none;
+        color: #262626;
+        font-weight: normal;
+        &:hover { color: #CA0100; }
+      }
+    }
+  }
+  .icons {
+    display: flex;
+    gap: 20px;
+    .icon-wrapper {
+      position: relative;
+      font-size: 24px;
+      color: #262626;
+      .badge {
+        position: absolute;
+        top: -10px;   // adjust vertically
+        right: -16px; // adjust horizontally
+        background: #ca0100;
+        color: #fff;
+        font-size: 12px;
+        padding: 2px 6px;
+        border-radius: 20px;
+      }
+    }
+  }
+}
+
+.sales-card {
+  display: flex;
+  width: 98%;
+  height: 600px;
+  margin-left: auto;
+  margin-right: auto;
+  background-color: rgba(239, 240, 240, 0.6);
+  border-radius: 25px;
+  position: relative;
+  overflow: hidden;
+  // .slider-content-container {
+  //   display: flex; /* Align slides in a row */
+  //   width: 300%; /* Since we have 3 slides, the container needs to be 3 times the width */
+  //   transition: transform 0.5s ease-in-out; /* Smooth transition for sliding */
+  // }
+
+  // .slider-content {
+  //   width: 100%; /* Each slide should take up 100% of the container */
+  //   flex: 0 0 100%; /* Ensure slides don't shrink or grow */
+  //   box-sizing: border-box;
+  //   display: flex;
+  //   justify-content: center;
+  //   align-items: center;
+  //   text-align: center;
+  //   opacity: 0;
+  //   transition: opacity 0.5s ease-in-out; /* Fade in and out */
+  // }
+
+  // .slider-content.active {
+  //   opacity: 1; /* Fade in the active slide */
+  // }
+  .slider-content {
+    display: flex;
+    flex: 0 0 100%;
+    box-sizing: border-box;
+    justify-content: center;
+    align-items: center;
+  }
+  #car1 {
+    width: 403;
+    height: 242;
+    transform: scaleX(-1);
+    position: absolute;
+    top: 180;
+    right: 100;
+  }
+  #car2 {
+    width: 507;
+    height: 281;
+    position: absolute;
+    top: 198;
+    right: 200;
+  }
+  #car3 {
+    width: 785;
+    height: 382;
+    position: absolute;
+    top: 192;
+    right: 360;
+  }
+  #car4 {
+    width: 680;
+    height: auto;
+    position: absolute;
+    top: 220;
+    right: 450;
+    z-index: 2;
+  }
+  #car5 {
+    transform: scaleX(-1);
+    width: 630;
+    height: auto;
+    position: absolute;
+    top: 180;
+    right: 180;
+    z-index: 1;
+  }
+  #car6 {
+    transform: scaleX(-1);
+    width: 440;
+    height: auto;
+    position: absolute;
+    top: 220;
+    right: 90;
+    
+  }
+  .bg-photo {
+    width: 1222px;
+    height: 600px;
+    border-radius: 0 25px 25px 0;
+    position: absolute;
+    right: 0;
+    background: url("../assets/images/city.jpg");
+    background-size: 110%;
+    background-position: right top -160px;
+    background-repeat: no-repeat;
+    filter: grayscale(100%);
+    z-index: -1;
+  }
+  p {
+    position: absolute;
+    background-color: #CA0100;
+    padding: 3 10;
+    border-radius: 25;
+    color: white;
+    font-weight: 600;
+    left: 9%;
+    top: 100;
+  }
+  h1 {
+    position: absolute;
+    top: 150;
+    left: 9%;
+    font-size: 60;
+    width: 800;
+    height: 140;
+    white-space: wrap;
+  }
+  span {
+    position: absolute;
+    top: 310;
+    left: 9%;
+    font-size: 26;
+    color: #737373;
+  }
+  .left-arrow {
+    position: absolute;
+    font-size: 34;
+    top: 283;
+    left: 40;
+    transform: rotateZ(90deg);
+    cursor: pointer;
+  }
+  .right-arrow {
+    position: absolute;
+    font-size: 34;
+    top: 283;
+    right: 40;
+    transform: rotateZ(-90deg);
+    cursor: pointer;
+  }
+  .dots {
+    position: absolute;
+    bottom: 70;
+    left: 9%;
+    width: 70;
+    height: 20;
+    display: flex;
+    justify-content: space-between;
+    color: #8e8d8d;
+    .active {
+      color: white;
+      border: solid #CA0100 4;
+      border-radius: 25;
+    }
+  }
 }
