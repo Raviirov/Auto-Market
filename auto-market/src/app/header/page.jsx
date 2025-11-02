@@ -1,5 +1,7 @@
 "use client";
 
+import "./style.scss";
+import Image from "next/image";
 import { Saira } from "next/font/google";
 import { AnimatePresence, motion } from "framer-motion";
 import { useEffect, useState } from "react";
@@ -10,7 +12,6 @@ import { PiLineVerticalThin } from "react-icons/pi";
 import { FaRegHeart } from "react-icons/fa";
 import { LiaChartBarSolid } from "react-icons/lia";
 import { GoSearch, GoDotFill } from "react-icons/go";
-import Image from "next/image";
 import Logo from '../assets/images/logo.png';
 import Car1 from '../assets/images/car1.png';
 import Car2 from '../assets/images/car2.png';
@@ -18,6 +19,9 @@ import Car3 from '../assets/images/car3.png';
 import Car4 from '../assets/images/car4.webp';
 import Car5 from '../assets/images/car5.png';
 import Car6 from '../assets/images/car6.webp';
+import Car7 from '../assets/images/car7.png';
+import Car8 from '../assets/images/car8.png';
+import Car9 from '../assets/images/car9.png';
 import kia from "../assets/images/brands/kia.png";
 import hyundai from "../assets/images/brands/hyundai.png";
 import skoda from "../assets/images/brands/skoda.png";
@@ -55,8 +59,8 @@ import ssangyong from "../assets/images/brands/ssangyong.png";
 import suzuki from "../assets/images/brands/suzuki.png";
 import uaz from "../assets/images/brands/uaz.png";
 import zotye from "../assets/images/brands/zotye.png";
+import SegmentedButtons from "./carCards.jsx";
 
-import "./style.scss";
 
 const Font = Saira();
 
@@ -144,7 +148,9 @@ function Header() {
   ];
 
   const prices = ["0", "500т", "800т", "1,1м", "1,4м", "1,7м", "2м", "2,3м", "2,7м", "3м"];
-  const [priceIndex, setPriceIndex] = useState(0);
+  const [priceIndex, setPriceIndex] = useState(1);
+  const percent = (priceIndex / (prices.length - 1)) * 100;
+
   
   return (
     <motion.div
@@ -308,7 +314,9 @@ function Header() {
                 <p>Остались последние авто!</p>
                 <h1>Горячие предложения!</h1>
                 <span>Спеши купить!</span>
-                <img src={Car3} alt="Car3" />
+                <Image id="car7" src={Car7} alt="Car7" />
+                <Image id="car8" src={Car8} alt="Car8" />
+                <Image id="car9" src={Car9} alt="Car9" />
               </div>
             )}
           </motion.div>
@@ -322,7 +330,7 @@ function Header() {
         <IoIosArrowDown className="right-arrow" onClick={goToNextSlide} />
       </div>
 
-      <div className="brands">
+      <div className="brands-filter-container">
         <ul className="brands-container">
           {brands.map((brand, i) => (
             <li key={i} className="brand-item">
@@ -336,25 +344,65 @@ function Header() {
           ))}
         </ul>
 
-        <div className="car-filter">
+        <div className="filter-container">
           <h2>Быстрый подбор авто</h2>
-          <div>
-            <label>Цена</label>
-            <label>
-            </label>
-            <input
-              type="range"
-              min="0"
-              max="10"
-              step="1"
-              value={prices[0]}
-              onChange={(e) => setPriceIndex([0, Number(e.target.value)])}
-            />
-            <div>
-              <p>{prices[priceIndex]}</p>
+            <div className="labels">
+              <label>Цена</label>
+              <label id="chosen-price">0-{prices[priceIndex]}</label>
+            </div>
+            <div className="input-values">
+              <div className="fake-thumb" />
+              <input
+                type="range"
+                min="0"
+                max={prices.length - 1}
+                step="1"
+                value={priceIndex}
+                onChange={(e) => setPriceIndex([Number(e.target.value)])}
+                style={{
+                  background: `linear-gradient(to right, #CA0100 ${percent}%, #E1E1E1 ${percent}%)`,
+                }}
+              />
+              <div className="price-markers">
+                {prices.map((price, index) => (
+                  <div 
+                    key={index} 
+                    className="price-marker"
+                  >
+                    <PiLineVerticalThin size='12' color='#C2C2C4' />
+                    <span>{price}</span>
+                  </div>
+                ))}
+              </div>
+            </div>
+          <div className="selects">
+            <div className="select-wrapper">
+              <select>
+                <option value="" hidden>Кузов</option>
+                <option value="sedan">Седан</option>
+                <option value="hatchback">Хетчбэк</option>
+                <option value="coupe">Купе</option>
+                <option value="crossover">Кроссовер</option>
+                <option value="suv">Внедорожник</option>
+                <option value="minivan">Минивэн</option>
+              </select>
+              <IoIosArrowDown className="select-icon" />
+            </div>
+            <div className="select-wrapper">
+              <select>
+                <option value="" hidden>Коробка</option>
+                <option value="manual">Механика</option>
+                <option value="auto">Автомат</option>
+              </select>
+              <IoIosArrowDown className="select-icon" />
             </div>
           </div>
+          <button>Показать 73</button>
         </div>
+      </div>
+
+      <div>
+        <SegmentedButtons />
       </div>
     </motion.div>
   );
