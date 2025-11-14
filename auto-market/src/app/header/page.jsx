@@ -59,7 +59,7 @@ import ssangyong from "../assets/images/brands/ssangyong.png";
 import suzuki from "../assets/images/brands/suzuki.png";
 import uaz from "../assets/images/brands/uaz.png";
 import zotye from "../assets/images/brands/zotye.png";
-import SegmentedButtons from "./segmentedButtons.jsx";
+import CarCards from "./carCards.jsx";
 
 
 const Font = Saira();
@@ -397,13 +397,19 @@ function Header() {
               <IoIosArrowDown className="select-icon" />
             </div>
           </div>
-          <button>Показать 73</button>
+          <button>ПОКАЗАТЬ 73</button>
         </div>
       </div>
 
-      <div>
-        <SegmentedButtons />
+      <h1 className="car-cards-header">Автомобили в наличии с ПТС</h1>
+      
+      <div className="car-cards-grid">
+        {Array.from({ length: 6 }).map((_, i) => (
+        <CarCards key={i} />
+      ))}
       </div>
+
+      <button>ПОКАЗАТЬ ЕЩЕ </button>
     </motion.div>
   );
 }

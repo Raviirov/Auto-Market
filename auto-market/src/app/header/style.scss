@@ -307,6 +307,8 @@
     background-position: right top -160px;
     background-repeat: no-repeat;
     filter: grayscale(100%);
+    mask-image: linear-gradient(to left, black 2%, transparent 100%);
+    -webkit-mask-image: linear-gradient(to left, black 2%, transparent 100%);
     z-index: -1;
   }
   p {
@@ -382,7 +384,7 @@
 .brands-filter-container {
   width: 1400px;
   height: 370px;
-  background-color: rgba(239, 240, 240, .6);
+  background-color: rgba(239, 240, 240, .9);
   border-radius: 15px;
   margin-left: auto;
   margin-right: auto;
@@ -531,4 +533,35 @@
       &:hover { background-color: #a00; }
     }
   }
+}
+
+.car-cards-header {
+  text-align: center;
+  font-size: 40px;
+  font-weight: 700;
+  margin: 20px 0;
+}
+
+.car-cards-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  justify-items: center;
+  gap: 20px;
+  padding: 20px;
+  width: 75%;
+  margin: 0 auto;
+}
+
+button {
+  display: block;
+  margin: 20px auto;
+  width: 312px;
+  height: 65px;
+  background-color: #CA0100;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  font-weight: 700;
+  cursor: pointer;
+  &:hover { background-color: #a00; }
 }
