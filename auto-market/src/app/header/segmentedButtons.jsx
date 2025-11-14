@@ -1,5 +1,5 @@
 import React from "react";
-import "./carCards.scss";
+import "./segmentedButtons.scss";
 
 const SegmentedButtons = () => {
   return (

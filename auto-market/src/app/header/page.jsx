@@ -59,7 +59,7 @@ import ssangyong from "../assets/images/brands/ssangyong.png";
 import suzuki from "../assets/images/brands/suzuki.png";
 import uaz from "../assets/images/brands/uaz.png";
 import zotye from "../assets/images/brands/zotye.png";
-import SegmentedButtons from "./carCards.jsx";
+import SegmentedButtons from "./segmentedButtons.jsx";
 
 
 const Font = Saira();
