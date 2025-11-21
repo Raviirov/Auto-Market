@@ -1,0 +1,22 @@
+.brands-container {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 0 40px;
+  .brand-item {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 10px;
+    a {
+      text-decoration: none;
+      color: #4F4F4F;
+      font-size: 14px;
+      &:hover { color: #CA0100; }
+    }
+    .brand-logo {
+      object-fit: contain;
+      width: 38px;
+      height: 38px;
+    }
+  }
+}

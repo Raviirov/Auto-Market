@@ -1,0 +1,174 @@
+.sales-card {
+  display: flex;
+  width: 98%;
+  height: 600px;
+  margin-left: auto;
+  margin-right: auto;
+  background-color: #0000000c;
+  border-radius: 25px;
+  position: relative;
+  overflow: hidden;
+  .slider-content {
+    display: flex;
+    flex: 0 0 100%;
+    box-sizing: border-box;
+    justify-content: center;
+    align-items: center;
+  }
+  #car1 {
+    width: 403;
+    height: 242;
+    transform: scaleX(-1);
+    position: absolute;
+    top: 180;
+    right: 100;
+  }
+  #car2 {
+    width: 507;
+    height: 281;
+    position: absolute;
+    top: 198;
+    right: 200;
+  }
+  #car3 {
+    width: 785;
+    height: 382;
+    position: absolute;
+    top: 192;
+    right: 360;
+  }
+  #car4 {
+    width: 680;
+    height: auto;
+    position: absolute;
+    top: 220;
+    right: 450;
+    z-index: 2;
+  }
+  #car5 {
+    transform: scaleX(-1);
+    width: 630;
+    height: auto;
+    position: absolute;
+    top: 180;
+    right: 180;
+    z-index: 1;
+  }
+  #car6 {
+    transform: scaleX(-1);
+    width: 440;
+    height: auto;
+    position: absolute;
+    top: 220;
+    right: 90;
+    
+  }
+  #car7 {
+    width: 400;
+    height: auto;
+    position: absolute;
+    top: 165;
+    right: 100;
+    transform: scaleX(-1);
+  }
+  #car8 {
+    width: 440;
+    height: auto;
+    position: absolute;
+    top: 230;
+    right: 250;
+    z-index: 1;
+  }
+  #car9 {
+    transform: scaleX(-1);
+    width: 850;
+    height: auto;
+    position: absolute;
+    top: 170;
+    right: 370;
+    z-index: 2;
+  }
+  .bg-photo {
+    width: 1222px;
+    height: 600px;
+    border-radius: 0 25px 25px 0;
+    position: absolute;
+    right: 0;
+    background: url("../../assets/images/city.jpg");
+    background-size: 110%;
+    background-position: right top -160px;
+    background-repeat: no-repeat;
+    filter: grayscale(100%);
+    mask-image: linear-gradient(to left, black 2%, transparent 100%);
+    -webkit-mask-image: linear-gradient(to left, black 2%, transparent 100%);
+    z-index: -1;
+  }
+  p {
+    position: absolute;
+    background-color: #CA0100;
+    padding: 3 10;
+    border-radius: 25;
+    color: white;
+    font-weight: 600;
+    left: 9%;
+    top: 100;
+  }
+  h1 {
+    position: absolute;
+    top: 150;
+    left: 9%;
+    font-size: 60;
+    width: 800;
+    height: 140;
+    white-space: wrap;
+  }
+  span {
+    position: absolute;
+    top: 310;
+    left: 9%;
+    font-size: 26;
+    color: #737373;
+  }
+  .arrow {
+    position: absolute;
+    font-size: 34;
+    top: 283;
+    cursor: pointer;
+  }
+  .left { 
+    left: 40; 
+    transform: rotateZ(90deg);
+  }
+  .right {
+    right: 40;
+    transform: rotateZ(-90deg);
+  }
+ 
+  .dots {
+    position: absolute;
+    bottom: 70;
+    left: 9%;
+    width: 70;
+    height: 20;
+    display: flex;
+    justify-content: space-between;
+    color: #8e8d8d;
+    cursor: pointer;
+    .active {
+      color: white;
+      border: solid #CA0100 4;
+      border-radius: 25;
+    }
+  }
+  .fade-up {
+    opacity: 0;
+    transform: translateY(5px);
+    animation: fadeUp 0.5s ease-out forwards;
+  }
+  @keyframes fadeUp {
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+}

@@ -5,10 +5,10 @@ import { LiaChartBarSolid } from "react-icons/lia";
 import { PiEngineFill } from "react-icons/pi";
 import { MdLocalGasStation, MdOutlineSpeed } from "react-icons/md";
 import { RxLapTimer } from "react-icons/rx";
-import Car10 from "../assets/images/car10.png";
-import "./carCards.scss";
+import Car10 from "../../assets/images/car10.png";
+import "./style.scss";
 
-const CarCards = () => {
+const CarCard = () => {
   return (
     <div className="car-card">
       <h1>Skoda Octavia</h1>
@@ -67,4 +67,4 @@ const CarCards = () => {
   );
 };
 
-export default CarCards;
+export default CarCard;

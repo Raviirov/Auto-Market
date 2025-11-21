@@ -1,11 +1,14 @@
-import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.scss";
-
+import Animation from "./components/Animation/animation";
+import Header from "./components/Header/page";
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body>
-        {children}
+        <Animation>
+          <Header />
+          {children}
+        </Animation>
       </body>
     </html>  
   );
