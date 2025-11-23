@@ -1,12 +1,14 @@
 import React from 'react'
-import CarCard from "../../components/CarCard/index.jsx";
+
 import "./style.scss";
+import CarCard from "../../components/CarCard/index.jsx";
 import Button from '../../components/Button/index.jsx';
+import Heading from '../../components/Heading/index.jsx';
 
 function CarCards() {
   return (
     <>
-      <h1 className="car-cards-header">Автомобили в наличии с ПТС</h1>
+      <Heading textAlign="center" title="Автомобили в наличии с ПТС" style={{margin: 40}}/>
       <div className="car-cards-grid">
         {Array.from({ length: 6 }).map((_, i) => (
         <CarCard key={i} />

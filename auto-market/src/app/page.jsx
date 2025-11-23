@@ -5,6 +5,8 @@ import GrandSales from "./home/GrandSales";
 import Brands from "./components/Brands";
 import Filter from "./components/Filter";
 import CarCards from "./home/CarCards";
+import FamilyPicksSection from "./home/FamilyPicksCards/indexpage.jsx";
+
 function Home() {
   
   return (
@@ -15,6 +17,7 @@ function Home() {
         <Filter />
       </div>
       <CarCards />
+      <FamilyPicksSection />
     </>
   )
 }

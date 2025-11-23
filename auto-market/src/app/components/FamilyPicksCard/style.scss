@@ -1,0 +1,19 @@
+.family-picks-card {
+  width: 447px;
+  height: 317px;
+  padding: 20px;
+  border-radius: 20px;
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-end;
+  justify-content: space-between;
+}
+
+.family-picks-heading {
+  font-size: 20px;
+  font-weight: 700;
+  color: #FFFFFF;
+  white-space: wrap;
+}
