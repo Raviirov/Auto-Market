@@ -5,3 +5,13 @@
     background-color: #f0f0f0;
   }
 }
+
+.slider-container {
+  overflow-x: scroll;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+.slider-container::-webkit-scrollbar {
+  display: none;
+}
