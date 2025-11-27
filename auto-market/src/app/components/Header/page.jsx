@@ -3,7 +3,6 @@
 import "./style.scss";
 import Button from "../Button";
 import Image from "next/image";
-import Animation from "../Animation/animation";
 import { Saira } from "next/font/google";
 import { useEffect, useState } from "react";
 import { CiLocationOn, CiClock2 } from "react-icons/ci";

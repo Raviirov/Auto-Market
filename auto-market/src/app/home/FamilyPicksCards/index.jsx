@@ -58,14 +58,14 @@ const familyCards = [
 //   const getOffset = () => {
 //     let offset = 0;
 //     for (let i = 0; i < startIndex; i++) {
-//       offset += (cardRefs.current[i]?.offsetWidth || 0) + 20;
+//       offset += (cardRefs.current[i]?.offsetWidth || 0) + 30;
 //     }
 //     return offset;
 //   };
 
 //   return (
 //     <>
-//       <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between", gap: "16px", width: "1380px", margin: "40px auto" }}>
+//       <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between", gap: "16px", width: "1400px", margin: "40px auto" }}>
 //         <div style={{ display: "flex", gap: "24px", alignItems: "center" }}>
 //           <Heading title="Наши подборки" />
 //           <Button width={132} height={35} style={{ fontWeight: 400, fontSize: 16, borderRadius: 11 }}>
@@ -85,10 +85,10 @@ const familyCards = [
 //       {/* Slider viewport */}
 //       <div
 //         style={{
-//           width: "1381px",
+//           width: "1401px",
 //           overflow: "hidden",
 //           margin: "40px auto",
-//           borderRadius: "20px",
+//           borderRadius: "25px",
 //         }}
 //       >
 //         <div
@@ -212,7 +212,7 @@ export default function FamilyPicksSection() {
       <div
         ref={sliderRef}
         className="slider-container"
-        style={{ display: "flex", gap: `${gap}px`, width: "1401px", borderRadius: "20px", margin: "60px auto", cursor: "grab" }}
+        style={{ display: "flex", gap: `${gap}px`, width: "1401px", borderRadius: "25px", margin: "60px auto", cursor: "grab" }}
         onMouseDown={handleMouseDown}
         onMouseMove={handleMouseMove}
         onMouseUp={handleMouseUp}
