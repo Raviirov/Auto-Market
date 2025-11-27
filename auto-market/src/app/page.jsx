@@ -6,6 +6,7 @@ import Brands from "./components/Brands";
 import Filter from "./components/Filter";
 import CarCards from "./home/CarCards";
 import FamilyPicksSection from "./home/FamilyPicksCards/indexpage.jsx";
+import LeaveYourContact from "./components/LeaveYourContact";
 
 function Home() {
   
@@ -18,6 +19,7 @@ function Home() {
       </div>
       <CarCards />
       <FamilyPicksSection />
+      <LeaveYourContact />
     </>
   )
 }

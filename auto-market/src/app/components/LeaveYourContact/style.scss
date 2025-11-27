@@ -1,0 +1,40 @@
+.leave-your-contact {
+  height: 328px;
+  margin: 0 auto 0 auto;
+  width: 1400px;
+  border-radius: 25px;
+  position: relative;
+  background: radial-gradient(
+    closest-side at 25%,
+    rgb(202, 0, 0) 0%,
+    rgba(133, 0, 0, 0.877) 20%,
+    rgb(51, 33, 33) 130%,
+    rgb(38, 38, 38) 150%
+  );
+}
+
+.boxer-gloves-image {
+  position: absolute;
+  transform: scaleX(-1) translateY(-50%);
+  width: 400px;
+  height: auto;
+  top: 50%;
+  left: -1px;
+}
+
+.text-content {
+  position: absolute;
+  top: 50%;
+  transform: translate(62%, -50%);
+  p {
+    color: #FFFFFF;
+    font-size: 20px;
+  }
+  .red-span {
+    color: #c23232;
+    font-weight: 700;
+  }
+  .contact-form {
+    display: flex;
+  }
+}
