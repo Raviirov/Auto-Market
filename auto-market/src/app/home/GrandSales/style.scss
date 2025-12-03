@@ -87,18 +87,18 @@
     z-index: 2;
   }
   .bg-photo {
-    width: 1222px;
+    width: 1500px;
     height: 600px;
     border-radius: 0 25px 25px 0;
     position: absolute;
     right: 0;
     background: url("../../assets/images/city.jpg");
     background-size: 110%;
-    background-position: right top -160px;
+    background-position: right -200px top -240px;
     background-repeat: no-repeat;
     filter: grayscale(100%);
-    mask-image: linear-gradient(to left, black 2%, transparent 100%);
-    -webkit-mask-image: linear-gradient(to left, black 2%, transparent 100%);
+    mask-image: linear-gradient(to left, black 2%, transparent 110%);
+    -webkit-mask-image: linear-gradient(to left, black 2%, transparent 110%);
     z-index: -1;
   }
   p {

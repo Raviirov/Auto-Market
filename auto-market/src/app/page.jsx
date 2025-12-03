@@ -7,6 +7,7 @@ import Filter from "./components/Filter";
 import CarCards from "./home/CarCards";
 import FamilyPicksSection from "./home/FamilyPicksCards/index.jsx";
 import LeaveYourContact from "./components/LeaveYourContact";
+import SpecialOffersSection from "./home/SpecialOfferCards";
 
 function Home() {
   
@@ -20,6 +21,7 @@ function Home() {
       <CarCards />
       <FamilyPicksSection />
       <LeaveYourContact />
+      <SpecialOffersSection />
     </>
   )
 }

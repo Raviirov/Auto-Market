@@ -31,9 +31,9 @@ function GrandSales() {
   };
 
   const slideVariants = {
-    enter: (dir) => ({ x: dir > 0 ? 550 : -550, opacity: 0 }),
+    enter: (dir) => ({ x: dir > 0 ? 700 : -700, opacity: 0 }),
     center: { x: 0, opacity: 1 },
-    exit: (dir) => ({ x: dir > 0 ? -550 : 550, opacity: 0 }),
+    exit: (dir) => ({ x: dir > 0 ? -700 : 700, opacity: 0 }),
   };
 
   return (

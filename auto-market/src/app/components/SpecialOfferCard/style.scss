@@ -1,0 +1,36 @@
+.special-offer-card {
+  width: 447px;
+  height: 196px;
+  background-repeat: no-repeat;
+  background-position: left, 30%;
+  background-size: 100% 100%, cover;
+  border-radius: 25px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 25px;
+  p {
+    font-size: 14px;
+    font-weight: 500;
+    color: #737373;
+    margin-top: 6px;
+  }
+}
+
+.special-offer-btn {
+  width: 142px;
+  height: 40px;
+  font-size: 14px;
+  font-weight: 400;
+  background-color: #cccccc;
+  color: black;
+  &:hover {
+    background-color: #A9A9AB;
+  }
+}
+
+.special-offer-heading {
+  font-size: 20px;
+  font-weight: 700;
+  color:#262626;
+}
