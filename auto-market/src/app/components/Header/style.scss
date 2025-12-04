@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+@import '../../assets/styles/mixins.scss';
 
 * {
   font-family: Roboto;
@@ -33,25 +34,17 @@
 }
 
 .line2 {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  gap: 30px;
+  @include flex(space-between, center, row, 30px );
   width: 1450px;
   margin: 0 auto;
   padding: 20px 0;
 
   .logo {
-    display: flex;
-    align-items: center;
-    gap: 10px;
+    @include flex($gap: 10px);
   }
   .logo div {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
+    @include flex(center, flex-start, column, 2px);
     height: 58px;
-    gap: 2px;
   }
   .logo div h1 {
     font-size: 30px;
@@ -68,8 +61,7 @@
   }
 
   .guarantee {
-    display: flex;
-    flex-direction: row;
+    @include flex-center;
     font-size: 16px;
     font-weight: 700;
     color: #000;
@@ -100,13 +92,9 @@
     gap: 20px;
     white-space: nowrap;
     div {
-      display: flex;
-      flex-direction: column;
-      align-items: flex-end;
+      @include flex(center, flex-end, column);
       div {
-        flex-direction: row;
-        align-items: center;
-        gap: 10px;
+        @include flex-center(row, 10px);
         h1 {
           font-size: 24px;
         }
@@ -123,32 +111,28 @@
 }
 
 .suggestions {
-  display: flex;
-  justify-content: space-between;
-  gap: 40px;
+  @include flex(space-between, center, row, 40px);
   width: 1450px;
   margin-left: auto;
   margin-right: auto;
   .menu {
-    li { position: relative; }
-    list-style: none;
-    display: flex;
+    @include flex(space-between, top, row, 96px);
     width: 100%;
-    justify-content: space-between;
-    gap: 96px;
+    list-style: none;
     margin: 10 0;
     font-weight: bold;
+    li { position: relative; }
   }
   .menu-btn {
     width: 100%;
     background: none;
     border: none;
-    font: inherit;
     color: #262626;
-    cursor: pointer;
     display: inline-block;
     align-items: center;
     gap: 5px;
+    cursor: pointer;
+    font: inherit;
     &:hover { color: #CA0100; }
   }
   .dropdown {

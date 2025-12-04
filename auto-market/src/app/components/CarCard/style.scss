@@ -1,13 +1,13 @@
+@import '../../assets/styles/mixins.scss';
+
 .car-card {
+  @include flex(center, top, column, 12px);
   box-shadow: 0 0px 30px rgba(117, 127, 136, 0.3);
   position: relative;
   width: 446px;
   height: 449px;
   border-radius: 25px;
   overflow: hidden;
-  display: flex;
-  flex-direction: column;
-  gap: 12px;
   padding: 20px;
   color: #262626;
   &::before {
@@ -109,23 +109,16 @@
     color: #737373;
   }
   .car-gift {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
+    @include flex(center, center, row);
     margin-top: -15px;
     .car-image {
       width: 90%;
       height: auto;
     }
     .gift-offers {
-      display: flex;
-      flex-direction: column;
-      align-items: top;
-      gap: 12px;
+      @include flex(center, top, column, 12px);
       .gift-offer {
-        display: flex;
-        flex-direction: row;
-        gap: 8px;
+        @include flex(center, top, row, 8px);
         .gift-icon {
           background-color: #262626;
           color: white;
@@ -151,25 +144,19 @@
   }
   .notes2 {
     margin-top: -10px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+    @include flex(space-between, center);
     h2 {font-size: 22px;}
     span {font-weight: 700;}
   }
   .specs {
-    display: flex;
-    justify-content: space-between;
+    @include flex(space-between, center);
     margin-top: -5px;
     span {
       width: 94px;
       height: 30px;
       border: solid 1px #C2C2C4;
       border-radius: 15px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      gap: 4px;
+      @include flex(center, center, row, 4px);
       font-size: 12px;
       p {
         font-size: 14px;

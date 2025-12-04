@@ -1,12 +1,11 @@
+@import '../../assets/styles/mixins.scss';
+
 .brands-container {
   display: grid;
   grid-template-columns: repeat(5, 1fr);
   gap: 0 40px;
   .brand-item {
-    display: flex;
-    justify-content: flex-start;
-    align-items: center;
-    gap: 10px;
+    @include flex(flex-start, center, row, 10px);
     a {
       text-decoration: none;
       color: #4F4F4F;
