@@ -1,0 +1,7 @@
+.phone-input-box {
+  border: 1px solid rgba(225, 225, 225, 1);
+  border-radius: 8px;
+  &:hover, &:focus-within {
+    border-color: #CA0100;
+  }
+}

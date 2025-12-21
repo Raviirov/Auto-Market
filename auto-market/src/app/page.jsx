@@ -8,6 +8,7 @@ import CarCards from "./home/CarCards";
 import FamilyPicksSection from "./home/FamilyPicksCards/index.jsx";
 import LeaveYourContact from "./components/LeaveYourContact";
 import SpecialOffersSection from "./home/SpecialOfferCards";
+import LoanForm from "./components/LoanForm";
 
 function Home() {
   
@@ -22,6 +23,7 @@ function Home() {
       <FamilyPicksSection />
       <LeaveYourContact />
       <SpecialOffersSection />
+      <LoanForm />
     </>
   )
 }

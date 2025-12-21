@@ -59,8 +59,8 @@
           @include flex(center, center, column, 4px);
           width: 50px;
           span {
-            font-size: 12px;
-            color: #737373;
+            font-size: 11px;
+            color: rgba(173, 173, 176);
           }
         }
       }
@@ -75,12 +75,13 @@
           height: 65px;
           border: 1px solid #E1E1E1;
           border-radius: 6px;
+          outline: none;
           padding: 0 10px;
           color: #262626;
           background-color: white;
           cursor: pointer;
           appearance: none;
-          &:hover { border-color: #CA0100; }
+          &:hover, &:focus-within { border-color: #CA0100; }
           option {
             color: #333;
             background-color: #fff;
