@@ -2,7 +2,7 @@ import './style.scss';
 import Image from "next/image"
 import Heading from "../../components/Heading";
 import Button from "../../components/Button";
-import Partner from "../../components/Partner";
+import Partner from "../../components/PartnerCard";
 import useSmartSlider from "../../assets/hooks/smart-slider";
 import { IoIosArrowDown } from "react-icons/io";
 
@@ -19,6 +19,12 @@ const partnersImages = [
   Partner3,
   Partner4,
 	Partner5,
+  Partner6,
+  Partner1,
+  Partner2,
+  Partner3,
+  Partner4,
+  Partner5,
   Partner6
 ];
 
@@ -34,7 +40,7 @@ export default function PartnersBanks() {
     onMouseLeave,
     onScroll,
   } = useSmartSlider({
-    gap: 30.33,
+    gap: 30.66,
     totalItems: partnersImages.length
   });
 

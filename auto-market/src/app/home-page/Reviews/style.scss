@@ -1,0 +1,51 @@
+@import "../../assets/styles/mixins.scss";
+
+
+.reviews-slider-container {
+  display: flex;
+  width: 1436px;
+  padding: 25px 18px;
+  gap: 30.66px;
+  margin: 0px auto;
+  border-radius: 10px;
+  overflow-x: scroll;
+  scroll-snap-type: x mandatory;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+  cursor: grab;
+  &::-webkit-scrollbar {
+    display: none;
+  }
+}
+
+.maps-section {
+  @include flex(space-between, center);
+  margin: 20px auto;
+  width: 1400px;
+  .maps-container {
+    width: 684px;
+    height: 145px;
+    gap: 20px;
+    border-radius: 10px;
+    background-color: rgba(239, 240, 240, 1);
+    @include flex(space-evenly, center);
+    img {
+      width: 230px;
+    }
+    span {
+      @include flex(center, center);
+      width: 123px;
+      height: 73px;
+      border-radius: 10px;
+      background-color: rgba(85, 188, 107, 1);
+      color: #fff;
+      font-size: 43px;
+    }
+    div {
+      @include flex(center, center, column, 10px);
+      .stars {
+        @include flex(center, center, row);
+      }
+    }
+  }
+}

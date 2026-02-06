@@ -10,6 +10,7 @@ import LeaveYourContact from "./home-page/LeaveYourContact";
 import SpecialOffersSection from "./home-page/SpecialOfferCards";
 import LoanForm from "./home-page/LoanForm";
 import PartnersBanks from "./home-page/PartnersBanks";
+import Reviews from "./home-page/Reviews";
 
 function Home() {
   
@@ -26,6 +27,7 @@ function Home() {
       <SpecialOffersSection />
       <LoanForm />
       <PartnersBanks />
+      <Reviews />
     </>
   )
 }
