@@ -1,9 +1,9 @@
 import { useState, React } from "react";
 import { IoIosArrowDown } from "react-icons/io";
 import { PiLineVerticalThin } from "react-icons/pi";
-import Heading from "../Heading";
-import MyPhoneInput from "../PhoneInput";
-import Button from "../Button";
+import Heading from "../../components/Heading";
+import MyPhoneInput from "../../components/PhoneInput";
+import Button from "../../components/Button";
 import FilterCar from "../../assets/images/filterCar.png";
 import Image from 'next/image';
 import "./style.scss";

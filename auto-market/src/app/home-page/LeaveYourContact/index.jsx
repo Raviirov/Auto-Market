@@ -2,9 +2,9 @@ import React, { useState } from 'react'
 import './style.scss';
 import BoxerGloves from '../../assets/images/boxerglove.png';
 import Image from 'next/image';
-import Button from '../Button';
-import Heading from '../Heading';
-import MyPhoneInput from '../PhoneInput';
+import Button from '../../components/Button';
+import Heading from '../../components/Heading';
+import MyPhoneInput from '../../components/PhoneInput';
 
 export default function LeaveYourContact() {
   return (

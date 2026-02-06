@@ -1,14 +1,15 @@
 "use client";
 
 import Link from "next/link";
-import GrandSales from "./home/GrandSales";
+import GrandSales from "./home-page/GrandSales";
 import Brands from "./components/Brands";
 import Filter from "./components/Filter";
-import CarCards from "./home/CarCards";
-import FamilyPicksSection from "./home/FamilyPicksCards/index.jsx";
-import LeaveYourContact from "./components/LeaveYourContact";
-import SpecialOffersSection from "./home/SpecialOfferCards";
-import LoanForm from "./components/LoanForm";
+import CarCards from "./home-page/CarCards";
+import FamilyPicksSection from "./home-page/FamilyPicksCards/index.jsx";
+import LeaveYourContact from "./home-page/LeaveYourContact";
+import SpecialOffersSection from "./home-page/SpecialOfferCards";
+import LoanForm from "./home-page/LoanForm";
+import PartnersBanks from "./home-page/PartnersBanks";
 
 function Home() {
   
@@ -24,6 +25,7 @@ function Home() {
       <LeaveYourContact />
       <SpecialOffersSection />
       <LoanForm />
+      <PartnersBanks />
     </>
   )
 }

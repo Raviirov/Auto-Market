@@ -6,15 +6,15 @@ import { useState } from "react";
 import { IoIosArrowDown } from "react-icons/io";
 import { GoDotFill } from "react-icons/go";
 import Image from "next/image";
-import Car1 from '../../assets/images/car1.png';
-import Car2 from '../../assets/images/car2.png';
-import Car3 from '../../assets/images/car3.png';
-import Car4 from '../../assets/images/car4.webp';
-import Car5 from '../../assets/images/car5.png';
-import Car6 from '../../assets/images/car6.webp';
-import Car7 from '../../assets/images/car7.png';
-import Car8 from '../../assets/images/car8.png';
-import Car9 from '../../assets/images/car9.png';
+import Car1 from '../../assets/images/cars/car1.png';
+import Car2 from '../../assets/images/cars/car2.png';
+import Car3 from '../../assets/images/cars/car3.png';
+import Car4 from '../../assets/images/cars/car4.webp';
+import Car5 from '../../assets/images/cars/car5.png';
+import Car6 from '../../assets/images/cars/car6.webp';
+import Car7 from '../../assets/images/cars/car7.png';
+import Car8 from '../../assets/images/cars/car8.png';
+import Car9 from '../../assets/images/cars/car9.png';
 
 function GrandSales() {
   const [currentIndex, setCurrentIndex] = useState(0);

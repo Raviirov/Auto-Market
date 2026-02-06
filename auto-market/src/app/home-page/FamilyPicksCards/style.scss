@@ -7,11 +7,22 @@
 }
 
 .slider-container {
+  display: flex;
+  width: 1400px;
+  gap: 30px;
+  margin: 20px auto;
+  border-radius: 25px;
   overflow-x: scroll;
+  scroll-snap-type: mandatory;
   scrollbar-width: none;
   -ms-overflow-style: none;
+  cursor: grab;
+  &::-webkit-scrollbar {
+    display: none;
+  }
 }
 
-.slider-container::-webkit-scrollbar {
-  display: none;
+.handle-btns {
+  display: flex;
+  gap: 10px;
 }

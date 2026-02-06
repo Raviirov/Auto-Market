@@ -5,7 +5,7 @@ import { LiaChartBarSolid } from "react-icons/lia";
 import { PiEngineFill } from "react-icons/pi";
 import { MdLocalGasStation, MdOutlineSpeed } from "react-icons/md";
 import { RxLapTimer } from "react-icons/rx";
-import Car10 from "../../assets/images/car10.png";
+import Car10 from "../../assets/images/cars/car10.png";
 import "./style.scss";
 
 const CarCard = () => {

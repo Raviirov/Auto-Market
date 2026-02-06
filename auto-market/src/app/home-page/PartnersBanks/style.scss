@@ -1,0 +1,19 @@
+.partner-image {
+  width: 203px;
+  height: auto;
+}
+.partners-slider-container {
+  display: flex;
+  width: 1400px;
+  gap: 30.33px;
+  margin: 20px auto;
+  border-radius: 10px;
+  overflow-x: scroll;
+  scroll-snap-type: mandatory;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+  cursor: grab;
+  &::-webkit-scrollbar {
+    display: none;
+  }
+}

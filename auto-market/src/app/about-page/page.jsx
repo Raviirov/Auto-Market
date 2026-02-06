@@ -1,6 +1,6 @@
 import Link from "next/link";
 import "./style.scss";
-import Heading from "../components/Heading/";
+import Heading from "../components/Heading";
 import Image from "next/image";
 import AboutImage from "../assets/images/about.png";
 

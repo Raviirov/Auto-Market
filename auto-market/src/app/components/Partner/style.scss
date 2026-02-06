@@ -1,0 +1,9 @@
+@import '../../assets/styles/mixins.scss';
+
+.partner-card {
+  width: 327px;
+  height: 133px;
+  background-color: #EFF0F0;
+  border-radius: 10px;
+  @include flex-center;
+}
