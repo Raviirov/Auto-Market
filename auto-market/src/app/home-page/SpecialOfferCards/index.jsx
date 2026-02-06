@@ -1,9 +1,10 @@
-import { React, useState, useRef, useEffect } from "react";
-import { IoIosArrowDown } from "react-icons/io";
 import "./style.scss";
+import { IoIosArrowDown } from "react-icons/io";
 import SpecialOfferCard from "../../components/SpecialOfferCard/index.jsx";
+import useSmartSlider from "../../assets/hooks/smart-slider";
 import Heading from "../../components/Heading/index.jsx";
 import Button from "../../components/Button/index.jsx";
+
 import Img1 from "../../assets/images/specialOfferCards/specialOffer1.jpg";
 import Img2 from "../../assets/images/specialOfferCards/specialOffer2.jpg";
 import Img3 from "../../assets/images/specialOfferCards/specialOffer3.jpg";
@@ -21,90 +22,21 @@ const specialOfferCards = [
 ];
 
 export default function SpecialOffersSection() {
-  const sliderRef = useRef(null);
-  const cardRefs = useRef([]);
-  const gap = 30;
-  const [moveAmount, setMoveAmount] = useState(0);
+  const {
+    sliderRef,
+    cardRefs,
+    handleNext,
+    handlePrev,
+    onMouseDown,
+    onMouseMove,
+    onMouseUp,
+    onMouseLeave,
+    onScroll,
+  } = useSmartSlider({
+    gap: 30,
+    totalItems: specialOfferCards.length
+  });
 
-  const isDragging = useRef(false);
-  const startX = useRef(0);
-  const scrollLeft = useRef(0);
-  const scrollTimeout = useRef(null);
-
-  // Calculate moveAmount dynamically
-  useEffect(() => {
-    if (cardRefs.current[0]) {
-      setMoveAmount(cardRefs.current[0].offsetWidth + gap);
-    }
-  }, [cardRefs.current[0]]);
-
-  const handleNext = () => {
-    if (!sliderRef.current) return;
-    const maxScroll = sliderRef.current.scrollWidth - sliderRef.current.clientWidth;
-
-    const next = sliderRef.current.scrollLeft + moveAmount > maxScroll
-      ? 0
-      : sliderRef.current.scrollLeft + moveAmount;
-
-    sliderRef.current.scrollTo({ left: next, behavior: "smooth" });
-  };
-
-  const handlePrev = () => {
-    if (!sliderRef.current) return;
-    const maxScroll = sliderRef.current.scrollWidth - sliderRef.current.clientWidth;
-
-    const prev = sliderRef.current.scrollLeft - moveAmount < 0
-      ? maxScroll
-      : sliderRef.current.scrollLeft - moveAmount;
-
-    sliderRef.current.scrollTo({ left: prev, behavior: "smooth" });
-  };
-
-  // Drag handlers
-  const handleMouseDown = (e) => {
-    isDragging.current = true;
-    startX.current = e.pageX - sliderRef.current.offsetLeft;
-    scrollLeft.current = sliderRef.current.scrollLeft;
-    sliderRef.current.style.cursor = "grabbing";
-  };
-
-  const handleMouseMove = (e) => {
-    if (!isDragging.current) return;
-    const x = e.pageX - sliderRef.current.offsetLeft;
-    const walk = x - startX.current;
-    sliderRef.current.scrollLeft = scrollLeft.current - walk;
-  };
-
-  const handleMouseUp = () => {
-    if (isDragging.current) return;
-    isDragging.current = false;
-    sliderRef.current.style.cursor = "grab";
-    snapToCard();
-  };
-
-  const handleMouseLeave = () => {
-    if (!isDragging.current) return;
-    isDragging.current = false;
-    sliderRef.current.style.cursor = "grab";
-    snapToCard();
-  };
-
-  const handleScroll = () => {
-    if (scrollTimeout.current) {
-      clearTimeout(scrollTimeout.current);
-    }
-
-    scrollTimeout.current = setTimeout(() => {
-      snapToCard();
-    }, 50);
-  };
-
-  const snapToCard = () => {
-    if (!sliderRef.current || moveAmount === 0) return;
-    const index = Math.round(sliderRef.current.scrollLeft / moveAmount);
-    sliderRef.current.scrollTo({ left: index * moveAmount, behavior: "smooth" });
-  };
-  
   return (
     <>
       <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", gap: "16px", width: "1400px", margin: "60px auto 40px auto" }}>
@@ -122,11 +54,11 @@ export default function SpecialOffersSection() {
       <div
         className="slider-container"
         ref={sliderRef}
-        onMouseDown={handleMouseDown}
-        onMouseMove={handleMouseMove}
-        onMouseUp={handleMouseUp}
-        onMouseLeave={handleMouseLeave}
-        onScroll={handleScroll}
+        onMouseDown={onMouseDown}
+        onMouseMove={onMouseMove}
+        onMouseUp={onMouseUp}
+        onMouseLeave={onMouseLeave}
+        onScroll={onScroll}
       >
         {specialOfferCards.map((card, idx) => (
           <div key={idx} ref={(el) => (cardRefs.current[idx] = el)} style={{ flex: "0 0 auto" }}>
