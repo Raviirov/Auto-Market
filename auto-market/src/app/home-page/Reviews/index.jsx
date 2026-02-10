@@ -1,12 +1,12 @@
 import './style.scss';
-import ReviewCard from "../../components/ReviewCard";
+import ReviewCard, { BigReviewCard } from "../../components/ReviewCard";
 import { renderStars } from "../../components/ReviewCard";
 import useSmartSlider from '@/app/assets/hooks/smart-slider';
 import Heading from "../../components/Heading";
 import Button from "../../components/Button";
 import { IoIosArrowDown } from "react-icons/io";
 
-const ratings = [4.5, 3, 5, 2.5, 4, 3.5, 5, 4.5, 2, 3];
+const ratings = [4.5, 3, 5, 2.5, 4, 3.5, 5, 4.5, 2, 3]; 
 const maps = [
   { src: "/yandexmap.png", alt: "yandexmap", rate: "4.5" },
   { src: "/googlemaps.png", alt: "googlemap", rate: "4.1" },
@@ -72,4 +72,17 @@ export default function Reviews() {
       </div>
     </>
   );
+}
+
+export function BigReviewCards() {
+  return (
+    <div className="big-review-cards-container">
+      <Heading title="Отзывы" className="big-review-cards-heading" />
+      <div className="big-review-cards">
+        <BigReviewCard />
+        <BigReviewCard />
+        <BigReviewCard />
+      </div>
+    </div>
+   );
 }

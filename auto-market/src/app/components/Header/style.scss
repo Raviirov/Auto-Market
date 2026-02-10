@@ -15,7 +15,7 @@
   margin: 0 auto;
   div {
     display: flex;
-    width: 1450px;
+    width: 1400px;
     height: 40px;
     margin-left: auto;
     margin-right: auto;
@@ -35,9 +35,16 @@
 
 .line2 {
   @include flex(space-between, center, row, 30px );
-  width: 1450px;
+  width: 1400px;
   margin: 0 auto;
   padding: 20px 0;
+
+  .link-home {
+    display: flex;
+    gap: 10px;
+    text-decoration: none;
+    color: inherit;
+  }
 
   .logo {
     @include flex($gap: 10px);
@@ -112,7 +119,7 @@
 
 .suggestions {
   @include flex(space-between, center, row, 40px);
-  width: 1450px;
+  width: 1400px;
   margin-left: auto;
   margin-right: auto;
   .menu {

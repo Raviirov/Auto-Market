@@ -1,31 +1,31 @@
-import Link from "next/link";
+"use client";
+
 import "./style.scss";
 import Heading from "../components/Heading";
 import Image from "next/image";
 import AboutImage from "../assets/images/about.png";
+import { IoIosPlay } from "react-icons/io";
 
-
-function About() {
+export default function About() {
   return (
     <div className="about-page-container">
-      <Heading title="О компании"></Heading>
-      <p className="about-page-text-subtitle">
+      <Heading title="О компании" />
+
+      <p className="about-page-text">
         Мы располагаем огромной торговой площадкой более 5000 квадратных метров, у нас в наличии не менее 200 автомобилей как отечественного, так и иностранного производства. В штате автосалона «Альтера» работают настоящие профессионалы, которые знают особенности каждого конкретного автомобиля.
       </p>
 
       <div className="image-container">
-        <Image 
+        <Image
           src={AboutImage}
-          alt="About us" 
+          alt="Preview"
+          fill
         />
-        {/* <iframe 
-          src="https://www.youtube.com/embed/VCPGMjCW0is?controls=1&mute=1&autoplay=1&loop=1&playlist=VCPGMjCW0is"
-          width='100%'
-          height={400}
-        ></iframe> */}
+
+        <span className="video-player-btn">
+          <IoIosPlay />
+        </span>
       </div>
     </div>
   );
 }
-
-export default About;

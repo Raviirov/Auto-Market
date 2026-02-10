@@ -13,17 +13,19 @@ import { FaRegHeart } from "react-icons/fa";
 import { LiaChartBarSolid } from "react-icons/lia";
 import { GoSearch } from "react-icons/go";
 import Logo from '../../assets/images/logo.png';
+import Link from "next/link";
+import { usePathname } from "next/navigation";
 const Font = Saira();
 
 
 function Header() {
-  const [activeIndex, setActiveIndex] = useState(0);
-  const ulItems = [
-    "Подбор авто",
-    "О компании",
-    "Техцентр",
-    "Отзывы",
-    "Контакты",
+  const pathname = usePathname();
+  const ulLinks = [
+    { title: "Подбор авто", href: "/catalog" },
+    { title: "О компании", href: "/about" },
+    { title: "Техцентр", href: "/techcenter" },
+    { title: "Отзывы", href: "/reviews" },
+    { title: "Контакты", href: "/contacts" },
   ]
 
   const [openIndex, setOpenIndex] = useState(null);
@@ -64,11 +66,13 @@ function Header() {
       <div className="line2">
         <div className="logo">
           <IoMenu style={{fontSize: "30px", color: "#262626"}}/> 
-          <Image src={Logo} alt="Logo" style={{width: "50px", height: "50px"}}/>
-          <div className="logo-text">
-            <h1 className={Font.className}>ABC AUTO</h1>
-            <p>Официальный дилер</p>
-          </div>
+          <Link href="/" className="link-home">
+            <Image src={Logo} alt="Logo" style={{width: "50px", height: "50px"}}/>
+            <div className="logo-text">
+              <h1 className={Font.className}>ABC AUTO</h1>
+              <p>Официальный дилер</p>
+            </div>
+          </Link>
           <PiLineVerticalThin size='40' color='#C2C2C4' style={{margin:'0 -10px'}} />
           <div className="guarantee">
             <p><span>10 лет</span> превосходим</p>
@@ -77,17 +81,19 @@ function Header() {
         </div>
 
         <ul>
-          {ulItems.map((item, index) => (
-            <li key={index}>
-              <a 
-                href="#"
-                className={activeIndex === index ? "active" : ""}
-                onClick={() => setActiveIndex(index)}
-              >
-                {item}
-              </a>
-            </li>
-          ))}
+          {ulLinks.map((link, index) => {
+            const isActive = pathname === link.href;
+            return (
+              <li key={index}>
+                <Link
+                  href={link.href}
+                  className={isActive ? "active" : ""}
+                >
+                  {link.title}
+                </Link>
+              </li>
+            );
+          })}
         </ul>
 
         <div className="contact">

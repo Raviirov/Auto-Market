@@ -33,3 +33,48 @@
 .stars {
   color: rgba(255, 184, 0, 1);
 }
+
+.big-review-card {
+  width: 447px;
+  // height: 585px;
+  background-color: rgba(242, 242, 242, 1);
+  border-radius: 25px;
+  overflow: hidden;
+}
+
+.big-review-card-content {
+  width: 100%;
+  padding: 30px;
+  @include flex(space-between, flex-start, column, 12px);
+  p {
+    width: 100%;
+    font-size: 16px;
+    line-height: 24px;
+    margin-top: 20px;
+    color: rgba(115, 115, 115, 1);
+    display: -webkit-box;
+    -webkit-line-clamp: 5;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    white-space: normal;
+    @include ellipsis(5);
+    &.expanded {
+      display: block;
+      -webkit-line-clamp: unset
+    }
+  }
+  .more-link {
+    @include flex(space-between, center);
+    width: 188px;
+    height: 36px;
+    padding: 0 20px;
+    font-size: 14px;
+    font-weight: 600;
+    border-radius: 20px;
+    background-color: rgba(225, 225, 225, 1);
+    user-select: none;
+    &:hover {
+      background-color: #A9A9AB;
+    }
+  }
+}
