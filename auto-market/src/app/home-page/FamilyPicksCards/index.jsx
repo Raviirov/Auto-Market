@@ -46,7 +46,10 @@ export default function FamilyPicksSection() {
   return (
     <>
       <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", gap: "16px", width: "1400px", margin: "40px auto" }}>
-        <Heading title="Наши подборки" />
+        <div className="heading-and-span">
+          <Heading title="Наши подборки" />
+          <span>Все подборки</span>
+        </div>
         <div className="handle-btns">
           <Button className="picks-btn" width={48} height={48} onClick={handlePrev}>
             <IoIosArrowDown style={{ transform: "rotateZ(90deg)", color: "#262626" }} />

@@ -1,0 +1,30 @@
+@import "../../assets/styles/mixins.scss";
+
+.blog-cards-container {
+  display: flex;
+  width: 1400px;
+  gap: 30px;
+  margin: 20px auto;
+  overflow-y: hidden;
+  overflow-x: scroll;
+  scroll-snap-type: mandatory;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+  cursor: grab;
+  &::-webkit-scrollbar {
+    display: none;
+  }
+}
+
+.heading-and-span {
+  @include flex(space-between, center, row, 16);
+  span {
+    @include flex-center;
+    background-color: rgba(202, 1, 0, 1);
+    width: 132px;
+    height: 35px;
+    border-radius: 11px;
+    color: white;
+    font-weight: 400;
+  }
+}

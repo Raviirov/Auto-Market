@@ -12,6 +12,7 @@ import LoanForm from "./home-page/LoanForm";
 import PartnersBanks from "./home-page/PartnersBanks";
 import Reviews, { BigReviewCards } from "./home-page/Reviews";
 import About from "./about/page";
+import BlogCards from "./home-page/BlogCards";
 
 function Home() {
   
@@ -31,6 +32,7 @@ function Home() {
       <Reviews />
       <BigReviewCards />
       <About />
+      <BlogCards />
     </>
   )
 }
