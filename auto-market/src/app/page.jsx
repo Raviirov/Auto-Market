@@ -13,6 +13,7 @@ import PartnersBanks from "./home-page/PartnersBanks";
 import Reviews, { BigReviewCards } from "./home-page/Reviews";
 import About from "./about/page";
 import BlogCards from "./home-page/BlogCards";
+import AutoSalon from "./home-page/AutoSalon";
 
 function Home() {
   
@@ -33,6 +34,7 @@ function Home() {
       <BigReviewCards />
       <About />
       <BlogCards />
+      <AutoSalon />
     </>
   )
 }
