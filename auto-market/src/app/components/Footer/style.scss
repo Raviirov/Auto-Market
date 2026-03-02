@@ -1,0 +1,170 @@
+@import "../../assets/styles/mixins.scss";
+
+.footer {
+  width: 1870px;
+  height: 603px;
+  margin: -20px auto 0 auto;
+  border-radius: 25px 25px 0 0;
+  background-color: rgba(38, 38, 38, 1);
+  z-index: 100;
+  position: relative;
+
+  .footer-links {
+    width: 1400px;
+    height: 94px;
+    margin: 0 auto;
+    color: white;
+    list-style: none;
+    text-transform: uppercase;
+    cursor: pointer;
+    @include flex(space-between, center);
+  }
+
+  hr {
+    height: 1px;
+    opacity: 20%;
+  }
+
+  .content-header {
+    @include flex();
+    width: 1400px;
+    margin: 60px auto 35px auto;
+    .ul-1 {
+      @include flex($gap: 13px);
+      width: 730px;
+      list-style: none;
+      li { width: 111px; }
+      a { color: rgba(115, 115, 115, 1); font-weight: 700}
+    }
+    .ul-2 {
+      @include flex($gap: 35px);
+      width: 670px;
+      padding: 0 100px;
+      list-style: none;
+      li { width: 200px; }
+    }
+    .active-li {
+      margin-bottom: -2px; 
+      font-size: 14px;
+      font-weight: 700;
+      color: white;
+      position: relative;
+      cursor: pointer;
+      &::after {
+        content: "";
+        display: block;
+        width: 34px;
+        height: 2px;
+        background: rgba(202, 1, 0, 1);
+        margin: 8px auto -8px 0;
+      }
+    }
+  }
+
+  .footer-content-container {
+    @include flex();
+    width: 1400px;
+    margin: 0 auto;
+    .footer-brands-container {
+      display: grid;
+      grid-template-columns: repeat(6, 1fr);
+      gap: 13px;
+      width: 730px;
+      height: 210px;
+      list-style: none;
+      a { color: rgba(115, 115, 115, 1); width: 111px; }
+    }
+    .credit-items-container {
+      @include flex($gap: 45px);
+      width: 670px;
+      padding: 0 0 0 100px;
+      ul {
+        width: 200px;
+        height: 210px;
+        display: grid;
+        gap: 13px;
+        list-style: none;
+        li { width: 200px; }
+        a { color: rgba(115, 115, 115, 1); }
+      }
+      .footer-address-content-container {
+        @include flex(space-between, flex-start, column, 13px);
+        width: 325px;
+        height: 210px;
+        padding-bottom: 26px;
+        color: rgba(115, 115, 115, 1);
+        div {
+          @include flex(flex-start, center, row, 10px);
+          div {
+            @include flex(flex-start, flex-start, column);
+            a { color: rgba(202, 1, 0, 1); }
+          }
+          .footer-icons {
+            width: 23px;
+            height: 23px;
+            background-color: rgba(202, 1, 0, 1);
+            color: white;
+            border-radius: 50%;
+            align-items: center;
+            justify-content: center;
+          }
+        }
+        .footer-select-wrapper {
+          position: relative;
+          select {
+            width: 325px;
+            height: 40px;
+            background-color: rgb(89, 93, 96, 0.4);
+            border: none;
+            border-radius: 8px;
+            color: white;
+            padding: 0 11px;
+            outline: none;
+            appearance: none;
+            cursor: pointer;
+          }
+          .footer-select-icon {
+            color: white;
+            position: absolute;
+            right: 12px;
+            top: 50%;
+            transform: translateY(-50%);
+            font-size: 18px;
+            pointer-events: none;
+          }
+        }
+      }
+    }
+  }
+
+  .footer-bottom {
+    position: absolute;
+    width: 100%;
+    height: 140px;
+    background-color: #1B1B1B;
+    bottom: 0;
+    padding: 0 235px;
+    @include flex(space-between, center, row);
+    div:first-child {
+      width: 445px;
+      height: 61px;
+      padding: 4px 0;
+      @include flex(space-between, flex-start, column);
+      p { font-size: 18px; color: #ffffff; }
+      div {
+        width: 445px;
+        height: 18px;
+        @include flex(space-between, flex-start, row);
+        a { font-size: 14px; color: #737373; }
+      }
+    }
+    div:nth-child(2) {
+      width: 613px;
+      height: 61px;
+      font-size: 14px;
+      color: #737373;
+      white-space: normal;
+      @include flex();
+    }
+  }
+}

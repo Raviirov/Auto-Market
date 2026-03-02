@@ -40,7 +40,7 @@ import suzuki from "../../assets/images/brands/suzuki.png";
 import uaz from "../../assets/images/brands/uaz.png";
 import zotye from "../../assets/images/brands/zotye.png";
 
-const brands = [
+export const brands = [
   { name: "Kia", logo: kia },
   { name: "Hyundai", logo: hyundai },
   { name: "Skoda", logo: skoda },
