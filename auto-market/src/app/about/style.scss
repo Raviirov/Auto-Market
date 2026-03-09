@@ -1,44 +1,107 @@
-@use "../assets/styles/mixins" as *;
+@import "../assets/styles/mixins.scss";
 
 .about-page-container {
-  width: 924px;
-  margin: 40px auto;
-  @include flex($direction: column);
+  width: 1400px;
+  margin: 30px auto;
 
-  .about-page-text {
-    width: 924px;
-    margin: 20px auto;
-    font-size: 16px;
-    text-align: center;
+  .pages-links {
+    margin-bottom: 20px;
+    font-size: 12px;
+    color: #737373;
+    a {
+      font-size: 12px;
+      text-decoration: none;
+      color: #737373;
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+  }
+
+  hr {
+    background-color: rgb(239, 240, 240);
+    margin: 30px 0 50px 0;
+    opacity: 0.5;
+  }
+
+  p {
     white-space: normal;
-    color: rgba(115, 115, 115, 1);
-    line-height: 160%;
+    line-height: 24px;
+    color: rgb(79, 79, 79);
   }
 
-  .image-container {
-    width: 924px;
-    height: 517px;
+  .text-with-dots {
+    margin: 25px 0;
+    div {
+      @include flex(flex-start, center, row, 20px);
+    }
+  }
+
+  .autoSalonPhotos-slider-container {
+    display: flex;
+    width: 1400px;
+    gap: 30px;
     margin: 20px auto;
-    position: relative;
     border-radius: 25px;
-    overflow: hidden;
+    overflow-x: scroll;
+    scroll-snap-type: mandatory;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+    cursor: grab;
+    &::-webkit-scrollbar {
+      display: none;
+    }
+    img {
+      border-radius: 25px;
+    }
   }
 
-  .video-player-btn {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    padding: 41px 40px 39px 41px;
-    border-radius: 50%;
-    color: #fff;
-    z-index: 2;
-    cursor: pointer;
+  .handle-btns {
+    display: flex;
+    gap: 10px;
+  }
 
-    background: radial-gradient(
-      circle,
-      rgba(202, 1, 0, 1) 30%,
-      transparent 70%
-    );
+  .picks-btn {
+    background-color: #FFFFFF;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    &:hover {
+      background-color: #f0f0f0;
+    }
+  }
+
+  .russia-map-container {
+    margin-top: 60px;
+    width: 1400px;
+    height: 652px;
+    background-color: #F8F8F8;
+    border-radius: 25px;
+    @include flex(space-evenly, center);
+    div {
+      width: 310px;
+      h1 { height: 270px; font-size: 252px; color: #CA0100; }
+      h6 { font-size: 28px; color:#CA0100; text-align: center; font-weight: 400;}
+      div {
+        margin-top: 40px;
+        @include flex();
+        div {
+          @include flex(center, center, column);
+          h3 { font-weight: 400; font-size: 24px;}
+          p { font-size: 24px; color: #ADADB0; }
+          span {
+            @include flex(center);
+            margin-bottom: 12px;
+            width: 68px;
+            height: 68px;
+            border-radius: 50%;
+            background-color: black;
+            color: white;
+          }
+        }
+      }
+    } 
+  }
+
+  .partners-slider-container {
+    margin-bottom: 100px;
   }
 }

@@ -1,3 +1,4 @@
+"use client";
 import { useRef, useState, useEffect } from "react";
 
 export default function useSmartSlider({ gap = 30, totalItems = 0 }) {

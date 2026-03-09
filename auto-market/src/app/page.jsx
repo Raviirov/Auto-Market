@@ -11,7 +11,7 @@ import SpecialOffersSection from "./home-page/SpecialOfferCards";
 import LoanForm from "./home-page/LoanForm";
 import PartnersBanks from "./home-page/PartnersBanks";
 import Reviews, { BigReviewCards } from "./home-page/Reviews";
-import About from "./about/page";
+import AboutPart from "./home-page/AboutPart";
 import BlogCards from "./home-page/BlogCards";
 import AutoSalon from "./home-page/AutoSalon";
 
@@ -32,7 +32,7 @@ function Home() {
       <PartnersBanks />
       <Reviews />
       <BigReviewCards />
-      <About />
+      <AboutPart />
       <BlogCards />
       <AutoSalon />
     </>
