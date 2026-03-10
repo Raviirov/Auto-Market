@@ -30,6 +30,7 @@ export default function AutoSalon() {
           magna posuere nunc pharetra faucibus. Phasellus id enim libero.
         </p>
       </div>
+      
       <div className="address-container">
         <img src="/address.png"></img>
         <div className="address-content-container">

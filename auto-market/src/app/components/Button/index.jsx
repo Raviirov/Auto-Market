@@ -1,8 +1,10 @@
+"use client";
+
 import "./style.scss";
 
 function Button({ onClick, children, width, height, className = "", style = {} }) {
   return (
-    <button 
+    <button
         onClick={onClick}
         className={`custom-button ${className}`}
         style={{width, height, ...style}}

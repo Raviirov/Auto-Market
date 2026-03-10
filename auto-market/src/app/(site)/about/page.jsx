@@ -1,16 +1,16 @@
 "use client";
 
 import "./style.scss";
-import Heading from "../components/Heading";
-import useSmartSlider from "../assets/hooks/smart-slider";
-import Button from "../components/Button";
+import Heading from "../../components/Heading";
+import useSmartSlider from "../../assets/hooks/smart-slider";
+import Button from "../../components/Button";
 import { GoDotFill } from "react-icons/go";
 import { IoIosArrowDown } from "react-icons/io";
 import Image from "next/image";
-import RussiaMap from "../components/RussiaMap";
+import RussiaMap from "../../components/RussiaMap";
 import { MdPersonAddAlt1 } from "react-icons/md";
 import { FaAward } from "react-icons/fa6";
-import PartnersBanks from "../home-page/PartnersBanks";
+import PartnersBanks from "../../home-page/PartnersBanks";
 
 const AutoSalonPhotos = Array(7).fill("/autoSalonPhoto.jpg");
 
