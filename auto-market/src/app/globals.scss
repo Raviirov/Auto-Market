@@ -1,9 +1,14 @@
 @import "./assets/styles/mixins.scss";
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
 
 * {
+  font-family: "Roboto", Sans-Serif;
+  font-size: 16px;
+  margin: 0;
   padding: 0;
   margin: 0;
   box-sizing: border-box;
+  white-space: nowrap;
 }
 
 .brands-filter-container {
